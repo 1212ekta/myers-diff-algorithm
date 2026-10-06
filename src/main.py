@@ -1,5 +1,4 @@
 import sys
-import gc
 from array import array
 
 
@@ -188,7 +187,7 @@ def highlight_line(old_line, new_line):
 
 
 def main() -> int:
-    gc.disable()        # many tuples/lists are created; skip the repeated cleanup scans
+          
     if len(sys.argv) != 4 or sys.argv[1] not in ("lines", "highlight"):
         print("usage: main.py lines|highlight A_PATH B_PATH", file=sys.stderr)
         return 2
